@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>AA Tree example</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="visualizer.js"></script>
+    <script src="aatree.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="description">
+            Sample AA Tree implementation based on this paper:
+            <a href="http://user.it.uu.se/~arnea/ps/simp.pdf">
+                http://user.it.uu.se/~arnea/ps/simp.pdf
+            </a>
+        </div>
+        <strong>Operations: </strong>
+        <form id="add-form">
+            <input type="number" id="add-key" value="1">
+            <button>Add</button>
+        </form>
+        <form id="remove-form">
+            <input type="number" id="remove-key" value="1">
+            <button>Remove</button>
+        </form>
+    </header>
+    <svg></svg>
+    <script>
+        var tree = new Tree();
+        var visualizer = new TreeVisualizer('svg');
+
+        var addForm = document.getElementById('add-form');
+        addForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            var input = document.getElementById('add-key');
+            var value = parseInt(input.value, 10);
+            tree.insert(value);
+            input.value = value + 1;
+            visualizer.update(tree.root);
+        }, false);
+
+        var removeForm = document.getElementById('remove-form');
+        removeForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            var input = document.getElementById('remove-key');
+            var value = parseInt(input.value, 10);
+            tree.remove(value);
+            visualizer.update(tree.root);
+        }, false);
+    </script>
+</body>
+</html>

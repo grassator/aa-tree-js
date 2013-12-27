@@ -1,0 +1,65 @@
+/* Visualization styles */
+.node-html {
+    font-size: 12px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    z-index: 1;
+}
+circle.node-dot {
+    fill: #000;
+    stroke: none;
+}
+
+path.link {
+    fill: none;
+    stroke: rgba(0,0,0,0.5);
+}
+
+path.deleting {
+    stroke: red;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Interface stuff */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 40px;
+    padding: 10px;
+    background-color: #eee;
+    position: relative;
+    z-index: 1;
+}
+
+.description {
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 4px 0;
+    margin: 0 0 4px 0;
+}
+
+form {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+input {
+    width: 40px;
+}
